@@ -1,6 +1,8 @@
+import game from "./gameState";
 // try to have one point of entry point the browser loads
 // i.e. Google Analytics put in here
 // put all the fluffy stuff in init.js
+// everything else import as modules
 
 // you could use setTimeouts
 
@@ -28,7 +30,7 @@ async function init() {
     const now = Date.now();
 
     if (nextTimeToTick <= now) {
-      tick();
+      game.tick();
       nextTimeToTick = now + TICK_RATE;
     }
 
