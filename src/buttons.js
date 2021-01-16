@@ -24,5 +24,11 @@ export default function initButtons(handleUserAction) {
   }
 
   // whenever you click on the buttons container, trigger the buttonClick function
+  // there used to be something like this at Beat45;
+  // don't add listeners directly to the button; if they go away; let's say from some DOM event;
+  // you lose the listener;
+  // add listener to the container;
+  // when you click on the container, did you happen to click on something with a class of this?
+  // that's better when dealing with paginated things especially
   document.querySelector(".buttons").addEventListener("click", buttonClick);
 }
