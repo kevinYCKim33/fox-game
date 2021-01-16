@@ -1,4 +1,6 @@
 import game from "./gameState";
+import { TICK_RATE } from "./constants";
+import initButtons from "./buttons";
 // try to have one point of entry point the browser loads
 // i.e. Google Analytics put in here
 // put all the fluffy stuff in init.js
@@ -8,10 +10,6 @@ import game from "./gameState";
 
 // do not do it! too many synchronosis problem!
 
-// screaming case:
-// this will never change
-const TICK_RATE = 3000; // in ms
-
 function tick() {
   console.log("tick", Date.now());
 }
@@ -19,6 +17,7 @@ function tick() {
 // async won't do anything here but in case...
 async function init() {
   console.log("starting game");
+  initButtons(game.handleUserAction);
 
   let nextTimeToTick = Date.now();
 
