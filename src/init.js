@@ -18,6 +18,8 @@ function tick() {
 async function init() {
   console.log("starting game");
   initButtons(handleUserAction); // handleUserAction is bound to gameState
+  // used to be game.handleUserAction
+  // game.handleUserAction("derp"); // surprisingly when you do this, there's no binding needed for handleUserAction
 
   let nextTimeToTick = Date.now();
 

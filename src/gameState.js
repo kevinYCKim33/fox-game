@@ -18,7 +18,7 @@ const gameState = {
     this.wakeTime = -1;
   },
   handleUserAction(icon) {
-    //
+    // 'this' without binding actually ends up becoming undefined / Window
     if (
       ["SLEEP", "FEEDING", "CELEBRATING", "HATCHING"].includes(this.current)
     ) {
