@@ -1,4 +1,4 @@
-import game from "./gameState";
+import game, { handleUserAction } from "./gameState"; // got all confusing with binding
 import { TICK_RATE } from "./constants";
 import initButtons from "./buttons";
 // try to have one point of entry point the browser loads
@@ -17,7 +17,7 @@ function tick() {
 // async won't do anything here but in case...
 async function init() {
   console.log("starting game");
-  initButtons(game.handleUserAction);
+  initButtons(handleUserAction); // handleUserAction is bound to gameState
 
   let nextTimeToTick = Date.now();
 
